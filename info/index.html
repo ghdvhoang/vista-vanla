@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vista Văn La - Dự Án Bất Động Sản Cao Cấp Hà Nội</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & GLOBAL STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111622;
+            color: #e8e8e8;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #b8956a;
+            line-height: 1.8;
+        }
+
+        /* ========== CONTAINER & LAYOUT ========== */
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* ========== HEADER / NAVIGATION ========== */
+        header {
+            background: linear-gradient(135deg, #111622 0%, #1a1f2e 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+            box-shadow: 0 10px 50px rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent);
+            pointer-events: none;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        header .tagline {
+            font-size: 1.3rem;
+            color: #b8956a;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        header .logo-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            color: #d4af37;
+        }
+
+        /* ========== HERO SECTION - BANNER/SLIDER ========== */
+        .hero-section {
+            padding: 0;
+            background: linear-gradient(135deg, #1a1f2e 0%, #111622 100%);
+            min-height: 600px;
+        }
+
+        .hero-carousel {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: 600px;
+            padding: 20px;
+        }
+
+        .hero-carousel .carousel-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-carousel .carousel-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.35);
+        }
+
+        .hero-carousel .carousel-item:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent, rgba(17, 22, 34, 0.9));
+            padding: 20px;
+            color: #d4af37;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ========== OVERVIEW CARDS ========== */
+        .overview-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .overview-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.03) 100%);
+            padding: 35px;
+            border-radius: 8px;
+            border-left: 5px solid #d4af37;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%);
+        }
+
+        .overview-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .overview-card .icon {
+            font-size: 1.8rem;
+            color: #d4af37;
+        }
+
+        .overview-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========== LOCATIONS & INFRASTRUCTURE ========== */
+        .locations-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #111622 100%);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .locations-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .locations-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .locations-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .locations-content h3 {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .location-item {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d4af37;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .location-item:hover {
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateX(10px);
+        }
+
+        .location-item strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* ========== AMENITIES SECTION - UTILITIES GRID ========== */
+        .amenities-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+        }
+
+        .amenities-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .amenities-intro p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .amenity-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.04) 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%);
+        }
+
+        .amenity-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .amenity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .amenity-card:hover .amenity-image img {
+            transform: scale(1.08);
+        }
+
+        .amenity-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .amenity-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .amenity-content p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* ========== LAYOUTS & TECHNICAL SPECS ========== */
+        .layouts-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #111622 100%);
+        }
+
+        .layout-type {
+            margin-bottom: 80px;
+        }
+
+        .layout-type:last-child {
+            margin-bottom: 0;
+        }
+
+        .layout-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .layout-type-badge {
+            background: #d4af37;
+            color: #111622;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .layout-header h3 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .layout-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .layout-image-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            aspect-ratio: 1;
+        }
+
+        .layout-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .layout-image-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .layout-specs {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #d4af37;
+        }
+
+        .spec-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .spec-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .spec-value {
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        .layout-description {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .layout-description p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .layout-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========== BLOCKQUOTE SECTION - MARKETING EMOTION ========== */
+        .blockquote-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 700px;
+        }
+
+        .blockquote-container {
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .quote-icon {
+            font-size: 5rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+            opacity: 0.6;
+        }
+
+        .blockquote-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #d4af37;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .blockquote-main .highlight {
+            color: #d4af37;
+            text-decoration: underline;
+            text-decoration-color: rgba(212, 175, 55, 0.4);
+            text-underline-offset: 8px;
+        }
+
+        .blockquote-subtitle {
+            font-size: 1.1rem;
+            color: #b8956a;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== COMPARISON TABLE ========== */
+        .comparison-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #111622 100%);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.15);
+            background: #1a1f2e;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1a1f2e;
+        }
+
+        table thead {
+            background: linear-gradient(90deg, #2a2f3e 0%, #1a1f2e 100%);
+            border-bottom: 3px solid #d4af37;
+        }
+
+        table th {
+            padding: 30px 20px;
+            text-align: left;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        table th:last-child {
+            border-right: none;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+
+        table td {
+            padding: 25px 20px;
+            color: #e8e8e8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-right: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        table td:last-child {
+            border-right: none;
+        }
+
+        table td.highlight-cell {
+            color: #d4af37;
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .checkmark {
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-right: 8px;
+        }
+
+        .crossmark {
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-right: 8px;
+        }
+
+        .table-conclusion {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 8px;
+            border-left: 5px solid #d4af37;
+        }
+
+        .table-conclusion p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* ========== FINISHING & HANDOVER SECTION ========== */
+        .finishing-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+        }
+
+        .finishing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .finishing-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.15);
+        }
+
+        .finishing-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .finishing-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .finishing-content h3 {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .finishing-list {
+            list-style: none;
+        }
+
+        .finishing-list li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            color: #b8956a;
+            line-height: 1.7;
+        }
+
+        .finishing-list li:before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+
+        /* ========== FINANCIAL POLICY SECTION ========== */
+        .financial-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #111622 100%);
+        }
+
+        .policy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .policy-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.05) 100%);
+            padding: 35px;
+            border-radius: 10px;
+            border-top: 4px solid #d4af37;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.2);
+        }
+
+        .policy-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .policy-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .policy-list {
+            list-style: none;
+            color: #b8956a;
+        }
+
+        .policy-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .policy-list li:before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 0.7rem;
+        }
+
+        /* ========== CTA BUTTON ========== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8956a 100%);
+            color: #111622;
+            padding: 18px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.5);
+        }
+
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: linear-gradient(135deg, #0d0d10 0%, #111622 100%);
+            color: #b8956a;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 3px solid #d4af37;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        footer .logo-text {
+            color: #d4af37;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-carousel {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .hero-carousel .carousel-item:nth-child(1) {
+                grid-column: span 1;
+                min-height: 300px;
+            }
+
+            .carousel-item {
+                min-height: 250px;
+            }
+
+            .locations-grid,
+            .layout-grid,
+            .finishing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th,
+            table td {
+                padding: 15px 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 0;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .blockquote-main {
+                font-size: 1.8rem;
+            }
+
+            .blockquote-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== ANIMATION & TRANSITIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <h1>
+                <span class="logo-icon">🏢</span>
+                The Vista Văn La
+            </h1>
+            <p class="tagline">Trải Nghiệm Sống Cao Cấp Chuẩn Singapore Tại Phía Tây Thủ Đô Hà Nội</p>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- ========== PHẦN 1: HERO SECTION - BANNER/SLIDER (3-4 ảnh) ========== -->
+        <section class="hero-section">
+            <div class="hero-carousel">
+                <!-- Ảnh chính chiếm 2 cột -->
+                <div class="carousel-item">
+                    <img src="images/phoi-canh-tong-the-1.jpg" alt="Phối cảnh tổng thể dự án The Vista Văn La từ trên cao">
+                    <div class="carousel-overlay">Phối cảnh dự án The Vista Văn La - Tọa lạc tại Phường Kiến Hưng, Quận Hà Đông</div>
+                </div>
+                <!-- Ảnh phụ 1 -->
+                <div class="carousel-item">
+                    <img src="images/phoi-canh-duong-pho-1.jpg" alt="Đường phố chính dự án The Vista Văn La với shophouse cao cấp">
+                    <div class="carousel-overlay">Tuyến phố đi bộ sầm uất với shophouse thương mại cao cấp</div>
+                </div>
+                <!-- Ảnh phụ 2 -->
+                <div class="carousel-item">
+                    <img src="images/phoi-canh-chi-tiet-2.jpg" alt="Chi tiết kiến trúc các tòa tháp The Vista Văn La">
+                    <div class="carousel-overlay">Kiến trúc hiện đại với thiết kế đỉnh cao từ SG Consultants</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN OVERVIEW - TỔNG QUAN ========== -->
+        <section class="overview-section">
+            <div class="container">
+                <h2>Tổng Quan Dự Án</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3><span class="icon">📍</span> Vị Trí Vàng</h3>
+                        <p>Phường Kiến Hưng, Quận Hà Đông, Hà Nội — Nằm trên trục hướng tâm Quang Trung – Quốc lộ 6, tọa lạc tại tâm điểm tăng giá bất động sản phía Tây Thủ Đô.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3><span class="icon">🏗️</span> Quy Mô Lớn</h3>
+                        <p>Diện tích tổng dự án <strong>12,29 hectare</strong> với <strong>1,047 căn hộ & biệt thự</strong> (215 căn thấp tầng + 832 căn cao tầng). Mật độ xây dựng chỉ <strong>26%</strong> — Cực thông thoáng!</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3><span class="icon">⏰</span> Tiến Độ Bàn Giao</h3>
+                        <p><strong>Quý IV/2028</strong>. Thiết kế chiến lược bởi <strong>SG Consultants</strong> — đơn vị quốc tế danh tiếng gắn liền với Marina Bay Sands và Raffles Hotel.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3><span class="icon">🏢</span> Chủ Đầu Tư</h3>
+                        <p><strong>SJ Group</strong> — 25+ năm kinh nghiệm, Top Profit500 năm 2025. Uy tín tuyệt đối với bề dày các dự án tiêu biểu tại Hà Nội.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3><span class="icon">🔐</span> Sở Hữu Pháp Lý</h3>
+                        <p><strong>Sổ hồng lâu dài</strong> — Tính pháp lý cao nhất, đảm bảo tính kế thừa và gia tăng giá trị bền vững cho gia đình bạn.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3><span class="icon">💰</span> Chính Sách Bán Hàng</h3>
+                        <p><strong>2% chiết khấu</strong> cho 200 khách hàng đầu tiên. Vốn ban đầu chỉ <strong>15%</strong>, ân hạn nợ gốc <strong>5 năm</strong>, lãi suất 0% trong 24 tháng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 2: VỊ TRÍ & HẠ TẦNG (2-3 ảnh) ========== -->
+        <section class="locations-section">
+            <div class="container">
+                <h2>Tọa Độ Vàng & Động Lực Kết Nối Hạ Tầng</h2>
+                
+                <div class="locations-grid">
+                    <div class="locations-image">
+                        <img src="images/so-do-vi-tri.jpg" alt="Sơ đồ vị trí The Vista Văn La trên bản đồ Hà Đông - Hà Nội">
+                    </div>
+                    <div class="locations-content">
+                        <h3>Tâm Điểm Kết Nối Đa Tầng</h3>
+                        <div class="location-item">
+                            <strong>⏱️ 2 phút:</strong> Tiếp cận ga Metro Văn Khê (Hệ thống đường sắt trên cao Cát Linh - Hà Đông, giải pháp di chuyển không tắc đường tuyệt đối).
+                        </div>
+                        <div class="location-item">
+                            <strong>⏱️ 5 phút:</strong> Tới trung tâm bán sỉ MM Mega Market Hà Đông — tiếp cận mua sắm bán buôn giá tốt.
+                        </div>
+                        <div class="location-item">
+                            <strong>⏱️ 10 phút:</strong> Tới đại siêu thị AEON Mall Hà Đông — trung tâm giải trí và mua sắm cao cấp.
+                        </div>
+                        <div class="location-item">
+                            <strong>⏱️ 15 phút:</strong> Kết nối trực tiếp vào các quận trung tâm cũ của Hà Nội (Hoàn Kiếm, Ba Đình, Đống Đa).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="locations-grid" style="margin-top: 60px;">
+                    <div class="locations-content">
+                        <h3>Bệ Phóng Tăng Giá từ Hạ Tầng Giao Thông</h3>
+                        <p style="margin-bottom: 25px; color: #d4af37; font-weight: 500;">Dự án hưởng lợi trực tiếp từ sự bùng nổ hạ tầng phía Tây với khả năng tiếp cận nhanh chóng:</p>
+                        <div class="location-item">
+                            <strong>Vành Đai 3, 3.5 & 4:</strong> Đang đẩy nhanh tiến độ hoàn thiện, kết nối các khu công nghiệp lớn của Hà Nội.
+                        </div>
+                        <div class="location-item">
+                            <strong>Đại Lộ Thăng Long:</strong> Trục quốc gia chiến lược kết nối từ sân bay Nội Bài đến các tỉnh phía Tây.
+                        </div>
+                        <div class="location-item">
+                            <strong>Quốc Lộ 6:</strong> Liên kết trực tiếp giữa thành phố với các khu công nghiệp nam Hà Nội.
+                        </div>
+                        <p style="margin-top: 25px; font-style: italic; color: #d4af37;">👉 <strong>Bài toán bất động sản:</strong> Khi hạ tầng hoàn thiện, giá bất động sản gần các ga Metro và trục giao thông chính thường tăng 20% - 35% so với mức hiện tại.</p>
+                    </div>
+                    <div class="locations-image">
+                        <img src="images/ban-do-giao-thong-ha-dong.jpg" alt="Bản đồ giao thông Hà Đông với vành đai 3, 3.5, 4 và đại lộ Thăng Long">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 3: TIỆN ÍCH & QUY HOẠCH SINGAPORE (8-10 ảnh) ========== -->
+        <section class="amenities-section">
+            <div class="container">
+                <h2>Hệ Sinh Thái Tiện Ích "All-In-One" Chuẩn Singapore</h2>
+                
+                <div class="amenities-intro">
+                    <p>Dự án được ví như một <strong>"Ốc đảo xanh giữa lòng phố"</strong> đáp ứng trọn vẹn mô hình Sống - Làm việc - Giải trí khép kín với 45+ tiện ích cao cấp</p>
+                </div>
+
+                <div class="amenities-grid">
+                    <!-- Tiện ích 1: Công viên sinh thái -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/cong-vien-sinh-thai-1.jpg" alt="Công viên sinh thái nội khu The Vista Văn La với hồ nước và hoa cảnh">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🌳 Công Viên Sinh Thái Nội Khu</h3>
+                            <p>Rộng lớn với đường dạo bộ Ecopath kéo dài ~1000m len lỏi dưới những tán cây xanh mát. Không gian yên tĩnh, trong lành cho cả gia đình.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 2: Đường Ecopath -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/duong-dao-ecopath.jpg" alt="Đường dạo bộ Ecopath 1km trong công viên sinh thái The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🚶 Đường Dạo Bộ Ecopath 1km</h3>
+                            <p>Thiết kế sinh thái với cây xanh dốc trên hai bên, hệ thống chiếu sáng âm tường lãng mạn. Lý tưởng cho chạy bộ, dạo bộ buổi sáng và tối.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 3: Bể bơi bốn mùa -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/be-boi-bon-mua.jpg" alt="Bể bơi bốn mùa trong nhà The Vista Văn La với tiêu chuẩn Olympic">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🏊 Bể Bơi Bốn Mùa Trong Nhà</h3>
+                            <p>Bể bơi Olympic tiêu chuẩn quốc tế, hệ thống tuần hoàn nước tự động, nhiệt độ ổn định quanh năm. Khu vực phụ cho trẻ em an toàn và vui chơi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 4: Gym & Yoga -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/gym-yoga-hien-dai.jpg" alt="Khu Gym và Yoga hiện đại tại The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>💪 Khu Tập Gym & Yoga Hiện Đại</h3>
+                            <p>Trang thiết bị thể dục cao cấp đến từ các thương hiệu danh tiếng, huấn luyện viên chuyên nghiệp. Lớp Yoga buổi sáng và tối cho sức khỏe toàn diện.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 5: Sân Pickleball Rooftop -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/san-pickleball-rooftop.jpg" alt="Sân Pickleball trên tầng thượng Rooftop The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🎾 Sân Pickleball Rooftop Sang Trọng</h3>
+                            <p>Bố trí trên tầng thượng với tầm nhìn Panorama ra thành phố. Trải nghiệm thể thao thời thượng đang được ưa chuộng tại các thành phố lớn thế giới.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 6: Sky Lounge -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/sky-lounge.jpg" alt="Sky Lounge sang trọng trên tầng cao The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>✨ Sky Lounge & Không Gian Giao Lưu</h3>
+                            <p>Khu vực tiếp khách sang trọng với bar, điểm đọc sách yên tĩnh, không gian kinh doanh thân mật. Lý tưởng cho các cuộc gặp gỡ xã hội.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 7: Co-working Space -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/co-working-space.jpg" alt="Khu làm việc chung Co-working space tại The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>💼 Khu Làm Việc Chung (Co-working Space)</h3>
+                            <p>Để cách tòa nhà, không cần phải đi văn phòng xa nhà. Trang bị Internet tốc độ cao, phòng họp, bảng kỹ thuật số cho khởi nghiệp và công việc tự do.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 8: Thư viện yên tĩnh -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/thu-vien-yen-tinh.jpg" alt="Thư viện yên tĩnh nội khu The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>📚 Thư Viện Yên Tĩnh</h3>
+                            <p>Không gian đọc sách ấm áp, góc học tập cho trẻ em, hệ thống sách điện tử. Nơi yêu thích của những ai yêu sách và tìm kiếm sự tĩnh lặng.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 9: Khu trẻ em (Kid Club) -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/kid-club-an-toan.jpg" alt="Kid Club an toàn với giáo viên chuyên nghiệp tại The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🎨 Kid Club Thông Minh & An Toàn</h3>
+                            <p>Khu vui chơi được giám sát 24/7 bằng camera AI, nhân viên chuyên nghiệp. Các hoạt động giáo dục, vẽ vời, khám phá khoa học cho trẻ.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tiện ích 10: Khu BBQ ngoài trời -->
+                    <div class="amenity-card">
+                        <div class="amenity-image">
+                            <img src="images/khu-bbq-ngoai-troi.jpg" alt="Khu tổ chức tiệc BBQ ngoài trời tại The Vista Văn La">
+                        </div>
+                        <div class="amenity-content">
+                            <h3>🍖 Khu BBQ Ngoài Trời</h3>
+                            <p>Không gian picnic và tiệc nướng gia đình, bạn bè. Gắn kết cộng đồng cư dân thông qua những buổi tụ tập vui vẻ ngoài trời.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 4: MẶT CẮT & LAYOUT CĂN HỘ (5-6 ảnh) ========== -->
+        <section class="layouts-section">
+            <div class="container">
+                <h2>Mặt Cắt & Layout Căn Hộ Thông Minh</h2>
+
+                <!-- CAM 2PN -->
+                <div class="layout-type">
+                    <div class="layout-header">
+                        <span class="layout-type-badge">📐 CĂN HỘ 2PN</span>
+                        <h3>Căn Hộ 2 Phòng Ngủ - Optimal Design Cho Gia Đình Trẻ</h3>
+                    </div>
+                    <div class="layout-grid">
+                        <div class="layout-images">
+                            <div class="layout-image-item">
+                                <img src="images/mat-bang-2pn.jpg" alt="Mặt bằng căn hộ 2 phòng ngủ The Vista Văn La">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/mat-cat-2pn.jpg" alt="Mặt cắt kỹ thuật căn hộ 2PN với chi tiết lõi thang máy cách âm">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/noi-that-2pn-1.jpg" alt="Nội thất mẫu căn hộ 2PN - Không gian phòng khách liên thông">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/noi-that-2pn-2.jpg" alt="Nội thất mẫu căn hộ 2PN - Phòng ngủ master với nhà vệ sinh khép kín">
+                            </div>
+                        </div>
+                        <div class="layout-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Diện Tích Thông Thủy (Usable Area)</div>
+                                <div class="spec-value"><strong>61m² – 71m²</strong></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Số Lượng Căn Hộ Loại Này</div>
+                                <div class="spec-value"><strong>576 căn</strong></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Khai Thác Cho Ai</div>
+                                <div class="spec-value">Gia đình trẻ, những ai mới lập gia đình, các cặp vợ chồng không có con nhỏ.</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Đặc Điểm Nổi Bật</div>
+                                <div class="spec-value">Thiết kế tối ưu không gian, tối ưu dòng tiền. Phòng khách mở rộng trực diện ra Logia chính đón gió tự nhiên. Hộp kỹ thuật nước âm tường.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-description">
+                        <p><strong>🔍 Hướng Dẫn Đọc Hiểu Mặt Cắt Kỹ Thuật 2PN:</strong></p>
+                        <p><strong>Lõi Thang Máy:</strong> Cụm thang máy tốc độ cao được đặt tách biệt hoàn toàn tại lõi trung tâm của tòa tháp, bao bọc bởi tường bê tông chịu lực dày để sóng rung và tiếng ồn không truyền vào các căn hộ kế cận.</p>
+                        <p><strong>Không Gian Chung (Phòng Khách & Bếp):</strong> Thiết kế theo concept liên thông (Open-concept) mở rộng trực diện ra Logia chính để đón gió. Khu vực bếp nấu thường đặt sát Logia phụ nhằm tối ưu thoát mùi tự nhiên.</p>
+                        <p><strong>Phòng Ngủ Master:</strong> Luôn tích hợp nhà vệ sinh khép kín bên trong. Phòng ngủ phụ được xếp cạnh cửa sổ lớn, tối đa hóa tầm nhìn Panorama ra công viên nội khu.</p>
+                        <p><strong>Vệ Sinh (WC):</strong> Các hộp kỹ thuật nước được bố trí âm tường khéo léo để tối ưu diện tích sử dụng thông thủy, trang bị hệ thống hút mùi trục đứng trung tâm ngăn mùi tuyệt đối.</p>
+                    </div>
+                </div>
+
+                <!-- CĂN HỘ 3PN & 3PN+ -->
+                <div class="layout-type">
+                    <div class="layout-header">
+                        <span class="layout-type-badge">📐 CĂN HỘ 3PN & 3PN+</span>
+                        <h3>Căn Hộ 3 Phòng Ngủ Luxury - Tối Ưu Cho Gia Đình Phát Triển</h3>
+                    </div>
+                    <div class="layout-grid">
+                        <div class="layout-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Căn Hộ 3PN Luxury</div>
+                                <div class="spec-value"><strong>Diện tích: ~97m²</strong><br>Tất cả các phòng ngủ đều có ánh sáng tự nhiên.</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Căn Hộ 3PN+ (Plus)</div>
+                                <div class="spec-value"><strong>Diện tích: ~103m²</strong><br>Có thêm không gian đa năng tùy biến (phòng làm việc, phòng đọc sách hoặc không gian chơi cho trẻ).</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Tổng Số Căn Hộ 3PN & 3PN+</div>
+                                <div class="spec-value"><strong>256 căn</strong></div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Khai Thác Cho Ai</div>
+                                <div class="spec-value">Gia đình có 1-2 con, những ai cần phòng khách thoáng, phòng làm việc riêng tư.</div>
+                            </div>
+                        </div>
+                        <div class="layout-images">
+                            <div class="layout-image-item">
+                                <img src="images/mat-bang-3pn.jpg" alt="Mặt bằng căn hộ 3 phòng ngủ The Vista Văn La">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/noi-that-3pn-1.jpg" alt="Nội thất căn hộ 3PN - Phòng khách sang trọng">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/noi-that-3pn-2.jpg" alt="Nội thất căn hộ 3PN - Phòng ngủ master nhà vệ sinh khép kín">
+                            </div>
+                            <div class="layout-image-item">
+                                <img src="images/noi-that-3pn-3.jpg" alt="Nội thất căn hộ 3PN+ - Không gian đa năng tùy biến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-description">
+                        <p><strong>🔍 Thiết Kế Layout 3PN & 3PN+ - Sự Khác Biệt:</strong></p>
+                        <p><strong>Ưu Điểm Chung:</strong> Tất cả các phòng ngủ đều có ánh sáng tự nhiên từ cửa sổ lớn. Không gian liên thông giữa phòng khách, bếp và Logia chính cho cảm giác rộng rãi. Phòng ngủ Master tích hợp Walk-in Closet và nhà vệ sinh riêng tư sang trọng.</p>
+                        <p><strong>Điểm Khác Biệt 3PN+:</strong> Không gian đa năng thêm (~6m²) có thể biến thành phòng làm việc riêng tư, phòng đọc sách yên tĩnh, hoặc không gian chơi đặc biệt cho trẻ em — tùy theo nhu cầu từng gia đình.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BLOCKQUOTE SECTION - MARKETING CẢM XÚC ========== -->
+        <section class="blockquote-section">
+            <div class="container">
+                <div class="blockquote-container">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="blockquote-main">
+                        <span class="highlight">❌ Chúng ta không bán một "cục đất"<br>hay "bốn bức tường bê tông".</span><br><br>
+                        <span class="highlight">✨ Chúng ta bán một Bản sắc sống đẳng cấp —<br>Một giải pháp tái tạo năng lượng hoàn hảo.</span>
+                    </div>
+                    <div class="blockquote-subtitle">
+                        <p>Khách hàng ngày nay đi làm 8-10 tiếng đối mặt với khói bụi, kẹt xe, áp lực công việc kinh khủng tại văn phòng.<br>Khi về nhà, họ xứng đáng được bước vào một <strong>"ốc đảo" tách biệt hoàn toàn</strong> của riêng mình.</p>
+                        <br><br>
+                        <p><strong>Trải Nghiệm Sống Thảnh Thơi Tại The Vista Văn La:</strong><br>
+                        Đó là cảm giác bước qua cánh cổng an ninh FaceID, mọi ồn ào đô thị bị bỏ lại phía sau. Bạn xỏ giày chạy bộ trên con đường Ecopath rợp bóng cây dài 1km, hít căng lồng ngực bầu không khí đã được lọc sạch bụi mịn PM2.5. Chiều muộn, bạn thả mình trong hồ bơi bốn mùa hoặc giao lưu cùng đối tác tại sân Pickleball Rooftop thời thượng. <strong>Đó là "Trải nghiệm sống nghỉ dưỡng tại gia 365 ngày"</strong> mà không một resort nào thay thế được.</p>
+                        <br><br>
+                        <p><strong>Khoản Đầu Tư Đắt Giá Cho Sức Khỏe & Con Cái:</strong><br>
+                        Con trẻ được lớn lên giữa thiên nhiên chuẩn Singapore, được bảo vệ bởi camera AI 24/7 và hệ thống lọc khí tươi sạch. Bố mẹ được gia tăng tuổi thọ nhờ môi trường sinh thái trong lành. <strong>Đây chính là giá trị vô hình nhưng đắt giá nhất của một tổ ấm thực sự.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 5: TIÊU CHUẨN BÀN GIAO & NỘI THẤT (3-4 ảnh) ========== -->
+        <section class="finishing-section">
+            <div class="container">
+                <h2>Tiêu Chuẩn Bàn Giao Nội Thất Luxury Residence</h2>
+
+                <div class="finishing-grid">
+                    <div class="finishing-image">
+                        <img src="images/noi-that-luxury.jpg" alt="Nội thất mẫu cao cấp tại The Vista Văn La">
+                    </div>
+                    <div class="finishing-content">
+                        <h3>Vật Liệu Bàn Giao Từ Các Thương Hiệu Đầu Bảng Thế Giới</h3>
+                        <ul class="finishing-list">
+                            <li><strong>Thiết Bị Bếp:</strong> Bosch, Hafele — công nghệ châu Âu, bảo hành dài hạn.</li>
+                            <li><strong>Thiết Bị Vệ Sinh:</strong> Kohler, Toto — thiết kế tối ưu, tiệu chuẩn quốc tế.</li>
+                            <li><strong>Hệ Thống Điều Hòa:</strong> Daikin / Panasonic — VRV âm trần, tiêu âm, tiết kiệm điện.</li>
+                            <li><strong>Hệ Thống Khóa Thông Minh:</strong> Smart Lock đa tính năng (Vân tay, mã số, thẻ từ, app di động).</li>
+                            <li><strong>Kính Low-E Cao Cấp:</strong> Hai lớp cách âm tuyệt đối, cản nhiệt, chống tia UV — tối ưu chi phí điện năng.</li>
+                            <li><strong>Sàn Gỗ Cao Cấp:</strong> Chất liệu nhập khẩu, độ bền cao, an toàn cho trẻ em.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="finishing-grid" style="margin-top: 50px;">
+                    <div class="finishing-content">
+                        <h3>Công Nghệ Thông Minh & An Toàn Cao Cấp</h3>
+                        <ul class="finishing-list">
+                            <li><strong>Hệ Thống Lọc Không Khí PM2.5:</strong> Lõi lọc tập trung, xử lý bụi mịn 24/7 — đảm bảo mỗi mét khối không khí đi vào căn hộ luôn tinh khiết.</li>
+                            <li><strong>Camera AI Giám Sát An Ninh:</strong> Mạng lưới camera thông minh phủ khắp sảnh, hành lang, tầng hầm — nhận diện khuôn mặt và hành vi đáng ngờ.</li>
+                            <li><strong>FaceID Tại Sảnh Chính:</strong> Công nghệ nhận diện khuôn mặt tự động mở cửa — an toàn, nhanh chóng, đẳng cấp.</li>
+                            <li><strong>Wifi Tốc Độ Cao Miễn Phí:</strong> Phủ sóng toàn bộ không gian công cộng — được cấp miễn phí trong 2 năm đầu.</li>
+                            <li><strong>Đỗ Xe Cơ Khí Thông Minh:</strong> Hệ thống tự động hóa giải quyết triệt để vấn nạn thiếu chỗ đỗ xe, an toàn tuyệt đối.</li>
+                            <li><strong>Trạm Sạc Xe Điện:</strong> Mạng lưới phủ rộng nội khu hỗ trợ khách hàng sử dụng xe điện sạch.</li>
+                        </ul>
+                    </div>
+                    <div class="finishing-image">
+                        <img src="images/thiet-bi-sang-trong.jpg" alt="Thiết bị cao cấp Bosch, Kohler, Toto tại The Vista Văn La">
+                    </div>
+                </div>
+
+                <div class="finishing-grid" style="margin-top: 50px;">
+                    <div class="finishing-image">
+                        <img src="images/kinh-low-e.jpg" alt="Kính Low-E cản nhiệt cao cấp tại căn hộ The Vista Văn La">
+                    </div>
+                    <div class="finishing-content">
+                        <h3>Tiêu Chuẩn Bàn Giao & Quyền Lợi Khách Hàng</h3>
+                        <ul class="finishing-list">
+                            <li><strong>Tính Giá Theo Diện Tích Thông Thủy:</strong> Bạn chi trả đúng cho từng mét vuông diện tích sử dụng thực tế, không tính theo diện tích tim tường — đảm bảo quyền lợi tối đa.</li>
+                            <li><strong>Miễn Phí Phí Quản Lý 2 Năm:</strong> Sau khi bàn giao, miễn toàn bộ phí dịch vụ quản lý vận hành cao cấp trong 2 năm đầu (trị giá hơn 100 triệu đồng).</li>
+                            <li><strong>Bảo Hành Cấu Trúc & Thiết Bị:</strong> Bảo hành cấu trúc bê tông theo quy định luật, bảo hành thiết bị theo thương hiệu nhà sản xuất (Bosch 10 năm, Kohler 10 năm, Daikin 10 năm).</li>
+                            <li><strong>Chất Lượng Thi Công Quốc Tế:</strong> Toàn bộ công trình được SG Consultants giám sát theo tiêu chuẩn quốc tế Singapore.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BẢNG SO SÁNH BENCHMARKING ========== -->
+        <section class="comparison-section">
+            <div class="container">
+                <h2>So Sánh Dự Án Cùng Phân Khúc (Benchmarking)</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tiêu Chí So Sánh</th>
+                                <th>The Vista Văn La<br>(SJ Group)</th>
+                                <th>Dự Án X<br>(Trục Lê Văn Lương)</th>
+                                <th>Dự Án Y<br>(Khu Trung Tâm Cũ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mật Độ Xây Dựng</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>26%</strong><br><em>Cực thông thoáng, ưu tiên cây xanh</em></td>
+                                <td>40% - 50%<br><em>Mật độ cao, ít không gian thở</em></td>
+                                <td>38% - 45%<br><em>Không gian công cộng bị bó hẹp</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hệ Thống Điều Hòa</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>VRV Âm Trần</strong><br><em>Sang trọng, tối ưu</em></td>
+                                <td><span class="crossmark">✗</span> Điều Hòa Treo Tường<br><em>Thông thường, ồn</em></td>
+                                <td><span class="crossmark">✗</span> Điều Hòa Cục Bộ<br><em>Sơ sài, tốn điện</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Công Nghệ Đỗ Xe</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>Cơ Khí Thông Minh</strong><br><em>Tự động hóa toàn diện</em></td>
+                                <td><span class="crossmark">✗</span> Đỗ Xe Truyền Thống<br><em>Thường xuyên quá tải</em></td>
+                                <td><span class="crossmark">✗</span> Hầm Đỗ Hẹp<br><em>Cư dân phải gửi ngoài</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hệ Thống Lọc Khí PM2.5</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>Lọc PM2.5 Toàn Khu</strong><br><em>Không khí sạch 24/7</em></td>
+                                <td><span class="crossmark">✗</span> Không Tích Hợp<br><em>Khí thải bị động</em></td>
+                                <td><span class="crossmark">✗</span> Không Có<br><em>Ô nhiễm không kiểm soát</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tiện Ích Xu Hướng</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>Sân Pickleball Rooftop</strong><br><em>Ecopath 1km, Gym, Yoga</em></td>
+                                <td>Tiện Ích Cơ Bản<br><em>Chỉ có khuôn viên nhỏ</em></td>
+                                <td>Tiện Ích Nghèo Nàn<br><em>Quỹ đất hẹp, lỗi thời</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kính Cách Nhiệt</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>Kính Low-E Cao Cấp</strong><br><em>Hai lớp, cách âm tuyệt đối</em></td>
+                                <td>Kính Thông Thường<br><em>Cách nhiệt kém, tỏa nhiệt nhanh</em></td>
+                                <td>Kính Thường<br><em>Rò rỉ khí nóng/lạnh</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>An Niên & Công Nghệ</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>FaceID + Camera AI 24/7</strong><br><em>Công nghệ hiện đại</em></td>
+                                <td>Camera Thông Thường<br><em>Giám sát sơ sài</em></td>
+                                <td>An Niên Cơ Bản<br><em>Không tự động hóa</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thiết Kế Chiến Lược</strong></td>
+                                <td class="highlight-cell"><span class="checkmark">✓</span> <strong>SG Consultants</strong><br><em>Marina Bay Sands, Raffles</em></td>
+                                <td>Thiết Kế Địa Phương<br><em>Kinh nghiệm hạn chế</em></td>
+                                <td>Thiết Kế Cũ Kỹ<br><em>Không cập nhật xu hướng</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-conclusion">
+                    <p>
+                        <strong style="color: #d4af37;">👉 Kết Luận So Sánh:</strong><br>
+                        The Vista Văn La vượt trội hoàn toàn về công nghệ quản lý, không gian xanh thực tế, tiêu chuẩn bàn giao cao cấp và thiết kế tân tiến. Đây là dự án đi sau nhưng <strong>đón đầu xu hướng sống của tương lai</strong>. Bất kỳ nhà đầu tư hay khách hàng mua để ở đều sẽ nhận được giá trị vượt trội so với các đối thủ cùng phân khúc.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 6: CHÍNH SÁCH TÀI CHÍNH & PHƯƠNG THỨC THANH TOÁN ========== -->
+        <section class="financial-section">
+            <div class="container">
+                <h2>Chính Sách Bán Hàng & Giải Pháp Tài Chính Tối Ưu</h2>
+
+                <div class="policy-cards">
+                    <!-- Card 1: Chiết khấu -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Chiết Khấu Mở Bán Sớm</h3>
+                        <ul class="policy-list">
+                            <li>Tặng ngay <strong>2%</strong> giá trị căn hộ</li>
+                            <li>Dành riêng cho <strong>200 khách hàng đầu tiên</strong></li>
+                            <li>Đặt chỗ thành công = Chiết khấu được kích hoạt</li>
+                            <li>Trị giá tiết kiệm: Khoảng <strong>50-100 triệu đồng</strong> / căn</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Vốn ban đầu -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Vốn Tự Có Ban Đầu Siêu Mỏng</h3>
+                        <ul class="policy-list">
+                            <li>Chỉ cần chuẩn bị <strong>15%</strong> giá trị căn hộ</li>
+                            <li>Đủ điều kiện ký <strong>Hợp Đồng Mua Bán (HĐMB)</strong></li>
+                            <li>Không cần vay toàn bộ giá trị căn hộ</li>
+                            <li>Ví dụ: Căn 2PN ~1 tỷ = Cần ~150 triệu để ký hợp đồng</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Vay vốn ngân hàng -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-bank"></i>
+                        </div>
+                        <h3>Đòn Bẩy Tài Chính Vượt Trội</h3>
+                        <ul class="policy-list">
+                            <li>Ngân hàng hỗ trợ vay <strong>lên tới 70%</strong> giá trị căn hộ</li>
+                            <li><strong>Lãi suất 0%</strong> kéo dài <strong>24 tháng</strong> liên tục</li>
+                            <li><strong>Ân hạn nợ gốc</strong> lên tới <strong>5 năm (60 tháng)</strong></li>
+                            <li>Cơ chế: Chỉ trả lãi suất 0% trong 24 tháng đầu, từ tháng 25 trở đi chỉ trả gốc không còn lãi</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Miễn phí quản lý -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Quà Tặng An Cư</h3>
+                        <ul class="policy-list">
+                            <li>Miễn phí hoàn toàn phí dịch vụ quản lý</li>
+                            <li>Thời gian: <strong>2 năm đầu</strong> tính từ bàn giao nhà</li>
+                            <li>Trị giá: Hơn <strong>100 triệu đồng</strong> / căn</li>
+                            <li>Bao gồm: Vệ sinh, bảo vệ, sửa chữa tiện ích, quản lý điện nước</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5: Cơ sở tính giá -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Cơ Sở Tính Giá Công Bằng</h3>
+                        <ul class="policy-list">
+                            <li>Giá bán được tính theo <strong>Diện Tích Thông Thủy</strong></li>
+                            <li>Diện tích sử dụng thực tế = diện tích thanh toán</li>
+                            <li>Không tính theo diện tích tim tường (kết cấu)</li>
+                            <li>Đảm bảo bạn chi trả đúng cho từng mét vuông</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6: Tiêu chuẩn bàn giao -->
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Tiêu Chuẩn Bàn Giao Cao Cấp</h3>
+                        <ul class="policy-list">
+                            <li>Toàn bộ thiết bị bàn giao từ thương hiệu đầu bảng</li>
+                            <li>Bảo hành cấu trúc & thiết bị theo tiêu chuẩn</li>
+                            <li>Kiểm định chất lượng theo tiêu chuẩn quốc tế</li>
+                            <li>Hỗ trợ khách hàng từ A-Z trong quá trình nhận bàn giao</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <h3 style="color: #d4af37; margin-bottom: 20px;">🚨 Lý Do Phải Xuống Tiền NGAY THỜI ĐIỂM HIỆN TẠI</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #b8956a; max-width: 900px; margin: 0 auto 30px;">
+                        <strong style="color: #d4af37;">1. Đáy Giá Của Đợt Mở Bán Đầu Tiên (Giai Đoạn F0):</strong><br>
+                        Nguyên tắc bất di bất dịch của bất động sản là "Mua từ đợt đầu, giàu theo tiến độ". Đây là thời điểm CĐT đưa ra mức giá trần kế hoạch hợp lý nhất cùng giỏ hàng đẹp nhất để kích cầu thị trường.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #b8956a; max-width: 900px; margin: 0 auto 30px;">
+                        <strong style="color: #d4af37;">2. Độc Chiếm Ưu Đãi Hữu Hạn:</strong><br>
+                        Chiết khấu 2% cho 200 khách hàng đầu tiên là phần thưởng chỉ dành cho những nhà đầu tư quyết đoán nhất. Chậm chân đồng nghĩa với việc mua lại suất chênh hoặc phải chịu giá cao hơn ở các block sau.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #b8956a; max-width: 900px; margin: 0 auto 30px;">
+                        <strong style="color: #d4af37;">3. Đón Đầu Sóng Hoàn Thiện Hạ Tầng 2028:</strong><br>
+                        Thời điểm bàn giao dự án (Quý IV/2028) trùng khớp với cột mốc hoàn thiện đồng bộ của hàng loạt hạ tầng giao thông trọng điểm xung quanh. <strong>Xuống tiền bây giờ là bạn đang mua bất động sản ở mức giá "quá khứ" và sẽ bán ra/khai thác ở mức giá "tương lai".</strong>
+                    </p>
+                    <button class="cta-button">
+                        <i class="fas fa-phone"></i> Đặt Chỗ Ưu Tiên Ngay
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PHẦN 6: THỰC TẾ & UY TÍN (2-3 ảnh) ========== -->
+        <section class="finishing-section">
+            <div class="container">
+                <h2>Thực Tế Công Trường & Uy Tín SJ Group</h2>
+
+                <div class="finishing-grid">
+                    <div class="finishing-image">
+                        <img src="images/tien-do-xay-dung.jpg" alt="Tiến độ xây dựng thực tế tại công trường The Vista Văn La">
+                    </div>
+                    <div class="finishing-content">
+                        <h3>Tiến Độ Xây Dựng Thực Tế & Cam Kết Bàn Giao</h3>
+                        <ul class="finishing-list">
+                            <li><strong>Hiện Trạng:</strong> Dự án đang trong giai đoạn thi công hoàn thiện kết cấu bê tông các tòa tháp và công trình hạ tầng.</li>
+                            <li><strong>Tiến Độ Dự Kiến:</strong> Bàn giao <strong>Quý IV/2028</strong> — còn khoảng 2.5 năm, đủ thời gian hoàn thiện mọi chi tiết.</li>
+                            <li><strong>Giám Sát Chất Lượng:</strong> SG Consultants giám sát toàn bộ tiến độ, chất lượng theo tiêu chuẩn Singapore quốc tế.</li>
+                            <li><strong>Kiểm Định 3 Lần:</strong> Kiểm định chất lượng bê tông, thép, điện nước trước bàn giao cuối cùng.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="finishing-grid" style="margin-top: 50px;">
+                    <div class="finishing-content">
+                        <h3>Bề Dày Kinh Nghiệm SJ Group</h3>
+                        <ul class="finishing-list">
+                            <li><strong>Thành Lập Năm:</strong> 1990s, tiền thân là Sudico — Công ty Phát triển Đô thị và Khu Công Nghiệp Sông Đà.</li>
+                            <li><strong>25+ Năm Kinh Nghiệm:</strong> Tiên phong trong lĩnh vực quy hoạch và phát triển đô thị quy mô lớn tại Việt Nam.</li>
+                            <li><strong>Top Profit500 Năm 2025:</strong> Nằm trong bảng xếp hạng các doanh nghiệp có lợi nhuận và khả năng sinh lời tốt nhất Việt Nam.</li>
+                            <li><strong>Dự Án Tiêu Biểu:</strong> Khu Đô Thị Mỹ Đình - Mễ Trì, Khu Đô Thị Nam An Khánh, Các dự án hạ tầng chiến lược.</li>
+                            <li><strong>Vị Thế Tài Chính:</strong> Quỹ đất sạch dồi dào, tiềm lực tài chính vững mạnh từ lợi nhuận tích lũy, khả năng hợp tác quốc tế cao.</li>
+                        </ul>
+                    </div>
+                    <div class="finishing-image">
+                        <img src="images/sj-group-background.jpg" alt="SJ Group - Chủ đầu tư của dự án The Vista Văn La">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p class="logo-text">🏢 The Vista Văn La</p>
+        <p>Dự Án Bất Động Sản Cao Cấp Phía Tây Hà Nội</p>
+        <p>Chủ Đầu Tư: <strong>SJ Group</strong> | Thiết Kế: <strong>SG Consultants</strong> | Bàn Giao: <strong>Quý IV/2028</strong></p>
+        <p style="margin-top: 20px; font-style: italic;">© 2026 SJ Group. Sở Hữu Bởi SG Consultants. Mọi Quyền Lợi Được Bảo Vệ.</p>
+        <p style="margin-top: 15px; color: #d4af37; font-size: 0.85rem;">Liên Hệ: 1800.XXXX | Email: info@thevistavanhla.vn</p>
+    </footer>
+</body>
+</html>
