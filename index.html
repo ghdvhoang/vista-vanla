@@ -213,12 +213,16 @@
             width: 100%;
             padding: 20px 0 50px;
         }
-        .swiper-button-next, .swiper-button-prev {
+
+        .swiper-button-next,
+        .swiper-button-prev {
             color: var(--gold);
         }
+
         .swiper-pagination-bullet {
             background: var(--text-muted);
         }
+
         .swiper-pagination-bullet-active {
             background: var(--gold);
         }
@@ -556,11 +560,11 @@
                 </div>
                 <div class="image-wrapper">
                     <img src="images/an-do-giao-thong-ha-dong-2.jpg" alt="Kết nối Metro" class="zoomable-image"
-                        style="cursor: zoom-in;">
-                    <div class="img-caption">Cách ga Metro Văn Khê 2 phút</div>
+                        style="cursor: zoom-in;" id="img-lien-ket-vung">
+                    <div class="img-caption">Nằm trên trục Quang Trung - Quốc lộ 6</div>
                 </div>
                 <div class="image-wrapper">
-                    <img src="images/4-vanh-dai.jpg" alt="Hạ tầng phía Tây" class="zoomable-image"
+                    <img src="images/4-vanh-dai.png" alt="Hạ tầng phía Tây" class="zoomable-image"
                         style="cursor: zoom-in;">
                     <div class="img-caption">Tâm điểm giao lộ 4 vành đai & cao tốc</div>
                 </div>
@@ -602,7 +606,8 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="facility-card">
-                            <div class="image-wrapper"><img src="images/view-duong-trong-khu-vista.jpg" alt="Đường dạo Ecopath">
+                            <div class="image-wrapper"><img src="images/view-duong-trong-khu-vista.jpg"
+                                    alt="Đường dạo Ecopath">
                             </div>
                             <h4>Đường Dạo Sinh Thái Ecopath</h4>
                             <p>Kéo dài ~1000m rợp bóng cây xanh, len lỏi tự nhiên</p>
@@ -624,7 +629,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="facility-card">
-                            <div class="image-wrapper"><img src="images/cong-vien-3.jpg" alt="Sân Pickleball Rooftop"></div>
+                            <div class="image-wrapper"><img src="images/cong-vien-3.jpg" alt="Sân Pickleball Rooftop">
+                            </div>
                             <h4>Sân Pickleball Rooftop</h4>
                             <p>Tiện ích thể thao thượng lưu, độc bản</p>
                         </div>
@@ -638,7 +644,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="facility-card">
-                            <div class="image-wrapper"><img src="images/view-vista-buoi-sang-2.jpg" alt="Co-working Space">
+                            <div class="image-wrapper"><img src="images/view-vista-buoi-sang-2.jpg"
+                                    alt="Co-working Space">
                             </div>
                             <h4>Co-working Space Sáng Tạo</h4>
                             <p>Làm việc hiệu quả ngay tại tổ ấm</p>
@@ -646,7 +653,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="facility-card">
-                            <div class="image-wrapper"><img src="images/vista-buoi-sang-3.jpg" alt="Thư viện yên tĩnh"></div>
+                            <div class="image-wrapper"><img src="images/vista-buoi-sang-3.jpg" alt="Thư viện yên tĩnh">
+                            </div>
                             <h4>Thư Viện Yên Tĩnh</h4>
                             <p>Không gian tri thức tĩnh tại cho cộng đồng</p>
                         </div>
@@ -660,7 +668,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="facility-card">
-                            <div class="image-wrapper"><img src="images/zone_parking.jpg" alt="Phố thương mại Shophouse"></div>
+                            <div class="image-wrapper"><img src="images/zone_parking.jpg"
+                                    alt="Phố thương mại Shophouse"></div>
                             <h4>Phố Thương Mại Shophouse</h4>
                             <p>Tuyến phố đi bộ mua sắm sầm uất ngay chân đế</p>
                         </div>
@@ -683,7 +692,8 @@
                 sống tĩnh tại tuyệt đối.</p>
 
             <div class="image-wrapper mb-20 mt-40">
-                <img src="images/mat-bang-tong-the-TheVista.jpg" alt="Mặt bằng tổng thể" style="max-height: 75vh; width: 100%; object-fit: contain;">
+                <img src="images/mat-bang-tong-the-TheVista.jpg" alt="Mặt bằng tổng thể"
+                    style="max-height: 75vh; width: 100%; object-fit: contain;">
                 <div class="img-caption">Mặt bằng quy hoạch tổng thể 12.29ha (Click vào ảnh để phóng to)</div>
             </div>
 
@@ -1015,7 +1025,169 @@
                 box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
             }
         }
+
+        /* Custom Modal Lien Ket Vung */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #141414;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-modal-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .lien-ket-content {
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        .lien-ket-title {
+            color: var(--gold);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            text-align: left;
+            margin-bottom: 50px;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        .lien-ket-title::after {
+            display: none;
+        }
+
+        .lien-ket-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .lien-ket-card {
+            background: #1e1e1e;
+            padding: 25px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, border-bottom 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .lien-ket-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .lien-ket-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border: none;
+            box-shadow: none;
+            cursor: default;
+        }
+
+        .lien-ket-card img:hover {
+            transform: none;
+            border-color: transparent;
+        }
+
+        .lien-ket-card .time {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .lien-ket-card .title {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .lien-ket-card .desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media(max-width: 900px) {
+            .lien-ket-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lien-ket-content {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .lien-ket-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+
+    <!-- Liên Kết Vùng Modal -->
+    <div id="lien-ket-modal" class="custom-modal">
+        <span class="custom-modal-close" id="lien-ket-close">&times;</span>
+        <div class="lien-ket-content">
+            <h2 class="lien-ket-title">LIÊN KẾT VÙNG SIÊU TỐC</h2>
+            <div class="lien-ket-grid">
+                <!-- Card 1 -->
+                <div class="lien-ket-card">
+                    <img src="images/ga-van-khe.png" alt="Ga Metro Văn Khê">
+                    <div class="time">02 PHÚT</div>
+                    <div class="title">GA METRO VĂN KHÊ</div>
+                    <div class="desc">Kết nối trực tiếp trục đường huyết mạch Cát Linh - Hà Đông.</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="lien-ket-card">
+                    <img src="images/MM-mega-market.png" alt="MM Mega Market">
+                    <div class="time">05 PHÚT</div>
+                    <div class="title">MM MEGA MARKET</div>
+                    <div class="desc">Tâm điểm mua sắm bán sỉ & lẻ lớn nhất khu vực phía Tây.</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="lien-ket-card">
+                    <img src="images/aeon-mall-HD.png" alt="Aeon Mall Hà Đông">
+                    <div class="time">10 PHÚT</div>
+                    <div class="title">AEON MALL HÀ ĐÔNG</div>
+                    <div class="desc">Đại siêu thị Nhật Bản với hệ sinh thái giải trí đỉnh cao.</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="lien-ket-card">
+                    <img src="images/pho-co-HN.png" alt="Lõi Cũ Hà Nội">
+                    <div class="time">15 PHÚT</div>
+                    <div class="title">LÕI CŨ HÀ NỘI</div>
+                    <div class="desc">Dễ dàng chạm ngõ di sản và các cơ quan hành chính TW.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Lightbox Modal -->
     <div id="lightbox-modal"
@@ -1062,6 +1234,13 @@
 
             zoomableImages.forEach(img => {
                 img.addEventListener('click', function () {
+                    if (this.id === 'img-lien-ket-vung') {
+                        const lienKetModal = document.getElementById('lien-ket-modal');
+                        lienKetModal.style.display = 'flex';
+                        void lienKetModal.offsetWidth;
+                        lienKetModal.style.opacity = '1';
+                        return;
+                    }
                     modal.style.display = 'flex';
                     // Trigger reflow for transition
                     void modal.offsetWidth;
@@ -1079,15 +1258,44 @@
                 }, 300);
             };
 
+            const closeLienKetModal = () => {
+                const lienKetModal = document.getElementById('lien-ket-modal');
+                if (lienKetModal) {
+                    lienKetModal.style.opacity = '0';
+                    setTimeout(() => {
+                        lienKetModal.style.display = 'none';
+                    }, 300);
+                }
+            };
+
             closeBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', function (e) {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
+
+            const lienKetCloseBtn = document.getElementById('lien-ket-close');
+            if (lienKetCloseBtn) {
+                lienKetCloseBtn.addEventListener('click', closeLienKetModal);
+            }
+            const lienKetModalElem = document.getElementById('lien-ket-modal');
+            if (lienKetModalElem) {
+                lienKetModalElem.addEventListener('click', function (e) {
+                    if (e.target === lienKetModalElem) {
+                        closeLienKetModal();
+                    }
+                });
+            }
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    closeModal();
+                if (e.key === 'Escape') {
+                    if (modal.style.display === 'flex') {
+                        closeModal();
+                    }
+                    const lienKetModalElem = document.getElementById('lien-ket-modal');
+                    if (lienKetModalElem && lienKetModalElem.style.display === 'flex') {
+                        closeLienKetModal();
+                    }
                 }
             });
         });
