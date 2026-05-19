@@ -8,6 +8,9 @@
     <meta name="description"
         content="Dự án chung cư cao cấp The Vista Văn La, Hà Đông. Không gian sống chuẩn Singapore với mật độ 26%, thiết kế thông minh, bàn giao nội thất hạng sang.">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         /* CSS reset and base */
         :root {
@@ -197,11 +200,27 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.5s ease, border-color 0.5s;
+            cursor: zoom-in;
         }
 
         img:hover {
             transform: scale(1.02);
             border-color: var(--gold);
+        }
+
+        /* Swiper styles */
+        .facility-swiper {
+            width: 100%;
+            padding: 20px 0 50px;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--gold);
+        }
+        .swiper-pagination-bullet {
+            background: var(--text-muted);
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--gold);
         }
 
         .image-wrapper {
@@ -579,54 +598,78 @@
                 tiện ích đáp ứng trọn vẹn mô hình Sống - Làm việc - Giải trí khép kín, định hình lối sống Smart Urban
                 Living đẳng cấp.</p>
 
-            <div class="grid-3 mt-40">
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/view-duong-trong-khu-vista.jpg" alt="Đường dạo Ecopath">
+            <div class="swiper facility-swiper mt-40">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/view-duong-trong-khu-vista.jpg" alt="Đường dạo Ecopath">
+                            </div>
+                            <h4>Đường Dạo Sinh Thái Ecopath</h4>
+                            <p>Kéo dài ~1000m rợp bóng cây xanh, len lỏi tự nhiên</p>
+                        </div>
                     </div>
-                    <h4>Đường Dạo Sinh Thái Ecopath</h4>
-                    <p>Kéo dài ~1000m rợp bóng cây xanh, len lỏi tự nhiên</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/cong-vien.jpg" alt="Công viên sinh thái"></div>
-                    <h4>Công Viên Sinh Thái Nội Khu</h4>
-                    <p>Lá phổi xanh điều hòa không khí hoàn hảo</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/cong-vien-2.jpg" alt="Bể bơi bốn mùa"></div>
-                    <h4>Bể Bơi Bốn Mùa Trong Nhà</h4>
-                    <p>Trải nghiệm thư giãn chuẩn resort 365 ngày</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/cong-vien-3.jpg" alt="Sân Pickleball Rooftop"></div>
-                    <h4>Sân Pickleball Rooftop</h4>
-                    <p>Tiện ích thể thao thượng lưu, độc bản</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/quan-cafe.jpg" alt="Sky Lounge"></div>
-                    <h4>Sky Lounge Sang Trọng</h4>
-                    <p>Không gian thưởng lãm chân mây tuyệt đẹp</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/view-vista-buoi-sang-2.jpg" alt="Co-working Space">
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/cong-vien.jpg" alt="Công viên sinh thái"></div>
+                            <h4>Công Viên Sinh Thái Nội Khu</h4>
+                            <p>Lá phổi xanh điều hòa không khí hoàn hảo</p>
+                        </div>
                     </div>
-                    <h4>Co-working Space Sáng Tạo</h4>
-                    <p>Làm việc hiệu quả ngay tại tổ ấm</p>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/cong-vien-2.jpg" alt="Bể bơi bốn mùa"></div>
+                            <h4>Bể Bơi Bốn Mùa Trong Nhà</h4>
+                            <p>Trải nghiệm thư giãn chuẩn resort 365 ngày</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/cong-vien-3.jpg" alt="Sân Pickleball Rooftop"></div>
+                            <h4>Sân Pickleball Rooftop</h4>
+                            <p>Tiện ích thể thao thượng lưu, độc bản</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/quan-cafe.jpg" alt="Sky Lounge"></div>
+                            <h4>Sky Lounge Sang Trọng</h4>
+                            <p>Không gian thưởng lãm chân mây tuyệt đẹp</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/view-vista-buoi-sang-2.jpg" alt="Co-working Space">
+                            </div>
+                            <h4>Co-working Space Sáng Tạo</h4>
+                            <p>Làm việc hiệu quả ngay tại tổ ấm</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/vista-buoi-sang-3.jpg" alt="Thư viện yên tĩnh"></div>
+                            <h4>Thư Viện Yên Tĩnh</h4>
+                            <p>Không gian tri thức tĩnh tại cho cộng đồng</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/view-duong.jpg" alt="Kid Club"></div>
+                            <h4>Kid Club Thông Minh</h4>
+                            <p>Phát triển tư duy toàn diện cho trẻ nhỏ</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="facility-card">
+                            <div class="image-wrapper"><img src="images/zone_parking.jpg" alt="Phố thương mại Shophouse"></div>
+                            <h4>Phố Thương Mại Shophouse</h4>
+                            <p>Tuyến phố đi bộ mua sắm sầm uất ngay chân đế</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/vista-buoi-sang-3.jpg" alt="Thư viện yên tĩnh"></div>
-                    <h4>Thư Viện Yên Tĩnh</h4>
-                    <p>Không gian tri thức tĩnh tại cho cộng đồng</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/view-duong.jpg" alt="Kid Club"></div>
-                    <h4>Kid Club Thông Minh</h4>
-                    <p>Phát triển tư duy toàn diện cho trẻ nhỏ</p>
-                </div>
-                <div class="facility-card">
-                    <div class="image-wrapper"><img src="images/zone_parking.jpg" alt="Phố thương mại Shophouse"></div>
-                    <h4>Phố Thương Mại Shophouse</h4>
-                    <p>Tuyến phố đi bộ mua sắm sầm uất ngay chân đế</p>
-                </div>
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -640,8 +683,8 @@
                 sống tĩnh tại tuyệt đối.</p>
 
             <div class="image-wrapper mb-20 mt-40">
-                <img src="images/mat-bang-tong-the-TheVista.jpg" alt="Mặt bằng tổng thể">
-                <div class="img-caption">Mặt bằng quy hoạch tổng thể 12.29ha</div>
+                <img src="images/mat-bang-tong-the-TheVista.jpg" alt="Mặt bằng tổng thể" style="max-height: 75vh; width: 100%; object-fit: contain;">
+                <div class="img-caption">Mặt bằng quy hoạch tổng thể 12.29ha (Click vào ảnh để phóng to)</div>
             </div>
 
             <div class="grid-2 mt-40">
@@ -983,9 +1026,36 @@
             style="max-width:90%; max-height:90%; border:2px solid var(--gold); border-radius:8px; box-shadow: 0 0 30px rgba(212,175,55,0.3); transform: scale(0.8); transition: transform 0.3s ease;">
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const zoomableImages = document.querySelectorAll('.zoomable-image');
+            // Khởi tạo Swiper cho phần tiện ích
+            const swiper = new Swiper('.facility-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    900: { slidesPerView: 3 }
+                }
+            });
+
+            // Xử lý lightbox cho tất cả các ảnh
+            const zoomableImages = document.querySelectorAll('img:not(#lightbox-img)');
             const modal = document.getElementById('lightbox-modal');
             const modalImg = document.getElementById('lightbox-img');
             const closeBtn = document.getElementById('lightbox-close');
